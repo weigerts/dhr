@@ -31,6 +31,9 @@
 						"type": "DatasetReference"
 					},
 					"name": "sourceleaves"
+				},
+				{
+					"name": "sourcesqltable"
 				}
 			],
 			"sinks": [],
@@ -225,7 +228,9 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> sourceleaves"
+				"     ignoreNoFilesFound: false) ~> sourceleaves",
+				"source(allowSchemaDrift: true,",
+				"     validateSchema: false) ~> sourcesqltable"
 			]
 		}
 	}
